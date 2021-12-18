@@ -39,6 +39,7 @@ img{
 }
 a{
     text-decoration: none;
+    color: var(--white);
 }
 ul{
     list-style: none;
@@ -70,6 +71,37 @@ h2{
 
 .min-vh-100{
     min-height: 100vh;
+}
+
+.btn{
+    display: inline-block;
+    border-radius: 30px;
+    text-transform: capitalize;
+    font-weight: 600px;
+    border: 2px solid transparent;
+    transition: all .4s ease;
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+    color: var(--main);
+}
+.btn-default{
+    border: 2px solid var(--main);
+}
+.btn-default:hover{
+    color: var(--white);
+    background-color: var(--main);
+}
+
+
+@keyframes zoomIn {
+    0%, 100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
 }
 
 /*header*/
@@ -172,8 +204,11 @@ header .nav-toggler.active{
 
 /*home section*/
 .home-section{
-    background-color: rgba(75, 59, 59, 0.363);
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(8, 8, 8, 0.692);
 }
+
 .home-bg{
     position: absolute;
     top: 0;
@@ -185,14 +220,18 @@ header .nav-toggler.active{
     background-position: center;
     background-size: cover;
     z-index: -2;
+    animation: zoomIn 10s ease infinite;
 }
 .home-section .min-vh-100{
     padding: 100px 0;
 }
-.home-text{
-    
+.home-text{   
     max-width: 700px;
     width: 100%;
     margin: auto;
     text-align: center;
+} 
+.home-text h1{
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
 }
