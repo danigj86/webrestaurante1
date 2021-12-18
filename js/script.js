@@ -17,9 +17,38 @@ document.addEventListener('click', (e)=>{
     }
 })
 /*sticky header*/
-window.addEventListener('click', ()=>{
-    if (this.pageYOffset > 60) {
-        document.querySelector('.header').classList.add('sticky');
+window.addEventListener('scroll', ()=>{
+    
+        //document.querySelector('.header').classList.add('sticky');
+        document.querySelector('.header').classList.toggle('sticky', window.scrollY > 400);
+        
+    
+})
+
+/*filter menu*/
+
+const menuTabs = document.querySelector('.menu-tabs');
+const menuTabItems = document.querySelectorAll('.menu-tab-item');
+const menuTabContent = document.querySelectorAll('.menu-tab-content');
+
+menuTabs.addEventListener('click', (e)=>{
+    if (e.target.classList.contains('menu-tab-item') && !e.target.classList.contains('active')) {
+        const target = e.target.getAttribute('data-target');
+        console.log(target);
+        //quita clase activo al menu
+        menuTabItems.forEach(item =>{
+            item.classList.remove('active')
+        })
+        //añade clase activo al elemento clickeado
+        e.target.classList.add('active');
+       
+        menuTabContent.forEach(item=>{
+            if (item.classList.contains(target)) {
+                item.classList.add('active')
+            }else{
+                item.classList.remove('active')
+            }
+        })
         
     }
 })

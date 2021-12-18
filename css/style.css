@@ -15,11 +15,11 @@ fonts
 
 :root{
    --main: #eaa023;
-   --dark: #0c1023;
-   --dark-light: #2a3238;
+   --dark: #1f52029f;
+   --dark-light: #155815;
    --white-light: #c8c8c8;
    --white: white;
-   --shadow: 00 15px rgba(0,0,0,0.25);
+   --shadow: 00 15px rgba(85, 34, 34, 0.25);
    scroll-behavior: smooth;
 }
 
@@ -49,6 +49,9 @@ ul{
    
     margin: auto;
 }
+p{
+    font-size: 16px;
+}
 .row{
     display: flex;
     flex-wrap: wrap;
@@ -61,7 +64,10 @@ h2{
     font-weight: 600;
     color: white;
 }
-
+h3{
+    font-weight: 600;
+    color: white;
+}
 .justify-content-between{
     justify-content: space-between;
 }
@@ -71,6 +77,26 @@ h2{
 
 .min-vh-100{
     min-height: 100vh;
+}
+.sec-padding{
+    padding: 80px 0;;
+}
+.section-title{
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2{
+    text-transform: capitalize;
+    font-size: 35px;
+}
+.section-title h2::before{
+    content: attr(data-title);
+    display: block;
+    font-size: 44px;
+    color: var(--main);
+    font-family: 'Dancing Script', cursive;
 }
 
 .btn{
@@ -103,24 +129,36 @@ h2{
         transform: scale(1.1);
     }
 }
+@keyframes spin01 {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 /*header*/
 .header{
-    padding: 12px 12px;
+    padding: 1px 10px;
     background-color: transparent;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 1;
     width: 100%;
+    transition: all .4s ease;
+   
 }
 .header.sticky{
     position: sticky;
     background-color: var(--dark-light);
+    -webkit-box-shadow: 7px 10px 26px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 10px 26px -5px rgba(0,0,0,0.75);
+    box-shadow: 7px 10px 26px -5px rgba(0,0,0,0.75);
 }
 
 .header .logo{
-  
     min-height: 34px;
     display: flex;
     align-items: center;
@@ -234,4 +272,114 @@ header .nav-toggler.active{
 .home-text h1{
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
+}
+/*about section*/
+.about-section{
+    background-color: var(--dark-light);
+}
+.about-section h3{
+    font-size: 26px;
+}
+
+.about-text, .about-img{
+    width: 50%;
+    padding: 0 15px;
+    min-width: 400px;
+}
+.about-img .img-box{
+    position: relative;
+}
+.about-img .img-box h3{
+    font-family: 'Dancing Script', cursive;
+    position: absolute;
+    color: var(--dark);
+   /*  background-color: var(--dark); */
+    left: 50%;
+    top: 50%;
+    max-width: 250px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+.about-img .img-box::before{
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border: 3px solid var(--main);
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    animation: spin01 10s linear infinite;
+}
+.about-img img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+
+/*menu section*/
+.menu-section{
+    background-color: var(--dark);
+}
+.menu-tabs{
+    width: 100%;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.menu-tab-item{
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px 10px;
+    transition: all .4s ease;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+
+.menu-tab-item.active{
+    color: var(--main);
+}
+.menu-tab-content{
+    display: none;
+}
+.menu-tab-content.active{
+    display: flex;
+}
+.menu-item{
+    width: 50%;
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.menu-item:hover .menu-item-title h3{
+    color: var(--main);
+}
+
+.menu-item-title{
+    display: flex;
+    align-items: center;
+}
+
+.menu-item-title h3{
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.menu-item-title img{
+    max-width: 100px;
+    margin-right: 15px;
+}
+.menu-item-price{
+    color: var(--main);
+}
+.menu-item-price{
+    font-size: 22px;
 }
