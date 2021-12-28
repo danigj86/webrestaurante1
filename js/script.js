@@ -42,6 +42,7 @@ menuTabs.addEventListener('click', (e)=>{
         //añade clase activo al elemento clickeado
         e.target.classList.add('active');
        
+        //quita/añade los items elegidos
         menuTabContent.forEach(item=>{
             if (item.classList.contains(target)) {
                 item.classList.add('active')
