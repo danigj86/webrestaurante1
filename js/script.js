@@ -1,3 +1,12 @@
+window.addEventListener('load',()=>{
+//----- animation scroll --------------------------------
+AOS.init();
+})
+
+
+
+
+
 const toggler = document.querySelector('.nav-toggler');
 const nav = document.querySelector('.nav');
 

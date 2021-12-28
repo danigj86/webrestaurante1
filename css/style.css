@@ -437,6 +437,9 @@ header .nav-toggler.active{
     width: calc(100% / 3);
     padding: 0 15px;
     position: relative;
+    min-width: 350px;
+    padding-top: 55px;
+   
 }
 .team-item h2{
     font-size:22px;
@@ -444,6 +447,8 @@ header .nav-toggler.active{
 .team-item img{
     width: 100%;
     border-radius: 10px;
+    transition: all 0.5s ease;
+
 }
 .team-item-info{
     background-color: var(--dark-light);
@@ -461,4 +466,52 @@ header .nav-toggler.active{
 .team-item:hover .team-item-info{
     transform: translateY(2px);
     background-color: var(--main)
+}
+.team-item:hover img{
+    transform: scale(0.95)
+}
+
+/*footer*/
+.footer{
+    padding: 80px 0;
+    background-image: url('../img/footer-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    z-index: -1;
+}
+.footer::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(36, 34, 34, 0.644);
+    z-index: -1;
+}
+
+.footer-item{
+    width: calc(100% / 3);
+    padding: 15px;
+    text-align: center;
+    min-width: 250px;
+}
+.footer h3{
+    color: white;
+    font-size:20px;
+}
+
+
+.footer .copy{
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid white;
+    align-items:center;
+    justify-content:center;
 }
