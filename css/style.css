@@ -138,6 +138,17 @@ h3{
     }
 }
 
+@keyframes pageLoader{
+    0%, 100%{
+        transform: translateX(-50px);
+    }
+    50%{
+        transform: translateX(50px);
+    }
+}
+
+
+
 /*header*/
 .header{
     padding: 1px 10px;
@@ -514,4 +525,31 @@ header .nav-toggler.active{
     border-top: 1px solid white;
     align-items:center;
     justify-content:center;
+}
+
+/*page loader*/
+
+.page-loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark);
+    z-index: 999;
+    transition: all 2s ease;
+}
+
+.page-loader::before{
+    content: '';
+    position: absolute;
+    height:4px;
+    width: 100px;background-color: var(--main);
+    left:calc(50% - 50px);
+    top:calc(50% - 2px);
+    animation: pageLoader 1s linear infinite;
+}
+
+.page-loader.fade-out{
+    opacity: 0;
 }

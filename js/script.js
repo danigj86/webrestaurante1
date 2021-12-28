@@ -1,4 +1,9 @@
 window.addEventListener('load',()=>{
+//------------ page loader --------------------------------
+document.querySelector('.page-loader').classList.add('fade-out');
+setTimeout(()=>{
+    document.querySelector('.page-loader').style.display = 'none';
+}, 1000)
 //----- animation scroll --------------------------------
 AOS.init();
 })
